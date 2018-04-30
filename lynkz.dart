@@ -1,11 +1,13 @@
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'globals.dart' as globals;
+import 'dart:core';
 
-var apiurl = "https://new.lynkz.me";
+var apicreateurl = "https://new.lynkz.me";
+var apideleteurl = "https://api.lynkz.me";
 
 Create(String link) async{
-  await http.post(apiurl, body: {"action": "new", "url": link, "json" : "true"})
+  await http.post(apicreateurl, body: {"action": "new", "url": link, "json" : "true"})
       .then((response) {
     Map json = JSON.decode(response.body);
     globals.rsp[0] = json['lynkz_url'];
@@ -14,13 +16,24 @@ Create(String link) async{
   return [globals.rsp[0], globals.rsp[1]];
 }
 
-Delete(String link, String delete_key) async{
- 
- return "feature incomplete";
+Delete(String identifier, String delete_key) async{
+  await http.post(apideleteurl, body: {"action" : "new", "identifier" : identifier, "delete_key" : delete_key}).then((response) {
+
+  // Do stuff here
+
+  });
+  return "feature incomplete";
+}
+
+urlToIdentifier(String url){
+  identifier = url.substring(21);
+  return identifier;
 }
 
 //this is only for testing stuff
 main() async{
   var li = await Create("https://retrylife.ca");
   print(li[1]);
+
+  print(urlToIdentifier(li[0]));
 }
