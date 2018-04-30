@@ -17,23 +17,20 @@ Create(String link) async{
 }
 
 Delete(String identifier, String delete_key) async{
-  await http.post(apideleteurl, body: {"action" : "new", "identifier" : identifier, "delete_key" : delete_key}).then((response) {
-
-  // Do stuff here
-
+  await http.post(apideleteurl, body: {"action" : "delete", "identifier" : identifier, "delete_key" : delete_key}).then((response) {
   });
-  return "feature incomplete";
 }
 
 urlToIdentifier(String url){
-  identifier = url.substring(21);
+  var identifier = url.substring(17);
   return identifier;
 }
 
 //this is only for testing stuff
 main() async{
   var li = await Create("https://retrylife.ca");
-  print(li[1]);
+  print(li[0]);
 
   print(urlToIdentifier(li[0]));
+  Delete(urlToIdentifier(li[0]), li[1]);
 }

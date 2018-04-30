@@ -1,4 +1,8 @@
 name: "lynkz"
+version: 1.0.0
+description: "The somewhat official wrapper for lynkz.me written in Dartlang"
+author: "Evan Pratten <ewpratten@gmail.com>"
+
 
 dependencies:
-  http: "^0.11.3+16"
+  http: ">=0.11.3+16 <0.12.0"
