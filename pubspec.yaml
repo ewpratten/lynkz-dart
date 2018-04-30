@@ -2,6 +2,7 @@ name: "lynkz"
 version: 1.0.0
 description: "The somewhat official wrapper for lynkz.me written in Dartlang"
 author: "Evan Pratten <ewpratten@gmail.com>"
+homepage: https://github.com/Ewpratten/lynkz-dart
 
 
 dependencies:
