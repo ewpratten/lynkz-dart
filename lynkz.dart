@@ -4,7 +4,7 @@ import 'globals.dart' as globals;
 
 var apiurl = "https://new.lynkz.me";
 
-apiCreate(String link) async{
+Create(String link) async{
   await http.post(apiurl, body: {"action": "new", "url": link, "json" : "true"})
       .then((response) {
     Map json = JSON.decode(response.body);
@@ -14,8 +14,13 @@ apiCreate(String link) async{
   return [globals.rsp[0], globals.rsp[1]];
 }
 
+Delete(String link, String delete_key) async{
+ 
+ return "feature incomplete";
+}
+
 //this is only for testing stuff
 main() async{
-   var li = await apiCreate("https://retrylife.ca");
+  var li = await Create("https://retrylife.ca");
   print(li[1]);
 }
