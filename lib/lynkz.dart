@@ -3,11 +3,8 @@ import 'dart:convert';
 import 'globals.dart' as globals;
 import 'dart:core';
 
-var apicreateurl = "https://new.lynkz.me";
-var apideleteurl = "https://api.lynkz.me";
-
 Create(String link) async{
-  await http.post(apicreateurl, body: {"action": "new", "url": link, "json" : "true"})
+  await http.post(globals.apicreateurl, body: {"action": "new", "url": link, "json" : "true"})
       .then((response) {
     Map json = JSON.decode(response.body);
     globals.rsp[0] = json['lynkz_url'];
@@ -17,7 +14,7 @@ Create(String link) async{
 }
 
 Delete(String identifier, String delete_key) async{
-  await http.post(apideleteurl, body: {"action" : "delete", "identifier" : identifier, "delete_key" : delete_key}).then((response) {
+  await http.post(globals.apideleteurl, body: {"action" : "delete", "identifier" : identifier, "delete_key" : delete_key}).then((response) {
   });
 }
 
