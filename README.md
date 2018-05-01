@@ -5,7 +5,7 @@ By: Evan Pratten
 # How to use
 
 ```Dart
-import 'package:lynkx/lynkz.dart' as lynkz;
+import 'package:lynkz/lynkz.dart' as lynkz;
 
 main() async{
 // shorten a link

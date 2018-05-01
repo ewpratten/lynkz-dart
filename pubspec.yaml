@@ -1,5 +1,5 @@
 name: "lynkz"
-version: 1.0.0
+version: 1.0.2
 description: "The somewhat official wrapper for lynkz.me written in Dartlang"
 author: "Evan Pratten <ewpratten@gmail.com>"
 homepage: https://github.com/Ewpratten/lynkz-dart

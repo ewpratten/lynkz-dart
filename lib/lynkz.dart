@@ -25,12 +25,3 @@ urlToIdentifier(String url){
   var identifier = url.substring(17);
   return identifier;
 }
-
-//this is only for testing stuff
-main() async{
-  var li = await Create("https://retrylife.ca");
-  print(li[0]);
-
-  print(urlToIdentifier(li[0]));
-  Delete(urlToIdentifier(li[0]), li[1]);
-}
